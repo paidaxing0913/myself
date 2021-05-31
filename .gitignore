@@ -4,3 +4,4 @@ myself.md
 html/
 # 星号 * 忽略所有以css为后缀的文件
 css/*.css
+css/03.js
