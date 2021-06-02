@@ -1,7 +1,0 @@
-# 忽略文件
-myself.md
-# 忽略整个文件夹
-html/
-# 星号 * 忽略所有以css为后缀的文件
-css/*.css
-css/03.js
