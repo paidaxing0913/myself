@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "mongoose": "^5.12.13"
+  },
+  "devDependencies": {
+    "ora": "^5.4.0"
+  }
+}
