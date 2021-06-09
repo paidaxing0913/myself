@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema({
-    username:{
+// 创建schema
+const userSchema = new mongoose.Schema ({
+    username: {
         type:String,
         unique:true,
         required:true
@@ -11,8 +11,8 @@ const userSchema = new mongoose.Schema({
         required:true
     }
 });
+// 创建model对象
+const userModel = mongoose.model('userInfo',userSchema);
 
-// 创建model
-const userModel = mongoose.model('uesrInfo',userSchema);
-
+// 暴露userModel
 module.exports = userModel;
