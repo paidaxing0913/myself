@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./03.promise的then的返回值"></script>
+</head>
+<body>
+    <script>
+        const p1 = new myPromise((resolve,reject) => {
+            console.log('promise同步代码');
+            setTimeout(() => {
+                // resolve('success');
+                reject('fail');
+            },1000)
+        });
+
+        console.log(p1);
+
+        const p2 =  p1.then((data) => {
+            console.log(data);
+            // return(321);
+            // return new myPromise ((resolve,reject) => {
+            //     // resolve("111");
+            //     reject('222');
+
+            // })
+        })
+        console.log(p2);
+    </script>
+</body>
+</html>

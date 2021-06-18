@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">提交</button>
+    <script>
+        const oBtn = document.getElementById('btn');
+
+        // script的src属性可以进行跨域请求
+
+        function fn(){
+
+        }
+        oBtn.onclick = function(){
+            // 创建一个script标签
+            newScript = document.createElement('script');
+            // 给script添加一个src
+            newScript.src = 'http://127.0.0.1:3000/login?user=laoxu&pass=123&cb=fn';
+            // 把script标签插入到body中，就会自动发送
+            document.body.appendChild(newScript);
+        }
+    </script>
+</body>
+</html>

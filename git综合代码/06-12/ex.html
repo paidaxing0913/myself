@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p1 = new Promise((resolve,reject) => {
+           setTimeout(() => {
+            // resolve('success');
+            reject('fail');
+           },1000)
+        });
+        console.log(p1);
+
+        const p2 = p1.then((data) => {
+            // then返回失败的两种情况：
+                // 1.返回的是一个失败的promise对象
+                // 2.报错（错误代码）
+            // console.log(data);
+            // return Promise.reject(333);
+            // console.log(sawdew);
+
+            // 返回的是一个promise对象
+            // return new Promise((resolve,reject) => {
+            //     setTimeout(() => {
+            //         resolve();
+            //     })
+            // })
+            console.log(data);
+
+        },(reason) => {
+            console.log(reason);
+            return new Promise((resolve,reject) => {
+                // resolve(1);
+                reject(2);
+            })
+        })
+        console.log(p2);
+    </script>
+</body>
+</html>
