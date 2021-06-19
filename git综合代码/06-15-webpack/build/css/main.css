@@ -1,0 +1,1 @@
+body{background-color:#9acd32}#box{-webkit-animation:all 1s;animation:all 1s;background-color:hotpink;height:400px;width:400px}#box #con{background:url(/imgs/53bf65fc86.jpg);height:200px;width:200px}@-webkit-keyframes move{0%{transform:rotate(30deg)}to{transform:rotate(80deg)}}@keyframes move{0%{transform:rotate(30deg)}to{transform:rotate(80deg)}}
