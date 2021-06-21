@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "title": "react",
+      "author": "laoxu",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

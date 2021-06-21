@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button id="btn1">查询</button>
+        <button id="btn2">新增</button>
+        <button id="btn3">修改</button>
+        <button id="btn4">删除</button>
+
+    </div>
+    <script>
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+        const btn3 = document.getElementById('btn3');
+        const btn4 = document.getElementById('btn4');
+
+        // 查询
+        btn1.onclick = function () {
+            // 发送AJAX请求
+            axios.get("http://localhost:3000/posts")
+            .then(data => {
+                console.log(data);
+            }).catch(err => {
+                console.log(err);
+            })
+        }
+
+        btn2.onclick = function () {
+
+        }
+
+        btn3.onclick = function () {
+            
+        }
+
+        btn4.onclick = function () {
+            
+        }
+    </script>
+    
+</body>
+</html>

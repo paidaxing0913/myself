@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="btn1">查询</button>
+        <button id="btn1">新增</button>
+        <button id="btn1">修改</button>
+        <button id="btn1">删除</button>
+    </div>
+    <script>
+        function axios({
+            url,
+            method = 'GET',
+            data = null,
+            params
+        }) {
+            return new Promise((resolve,reject) => {
+                // 1.获取xhr对象
+                const xhr = new XMLHttpRequest();
+                // 打开路径
+                let qs = "";// 初始化一个字符串
+                if(parms) {
+                    /*
+                        params:{
+                            name:"laoxu",
+                            pass:123
+                        }
+                        处理为：?name=laoxu&pass=123 然后拼接在url上
+
+                    */
+                        qs = Object.keys(params).reduce((p,c) => {
+                            return p + c + '=' + params[c] + '&';
+                        },'?').slice(0,-1);
+                }
+                xhr.open(method,url+qs,true);
+
+                // 3.发送数据
+                method = method.toUpperCase();
+
+                // 只有POST 和 PUT考虑data传值
+                if(method === 'POST' || method === 'PUT') {
+                    // data传递的都是对象格式，要先处理data
+                    xhr.setRequestHeader('content-type','application/json,charset=utf-8')
+                    xhr.send(JSON.stringify(data));
+                }else{
+                    xhr.send();
+                }
+
+                // 4.事件
+                xhr.onreadystatechange = function () {
+                    if(xhr.readyState !== 4) return;
+                    if(xhr.status >= 200 && xhr.status < 300){
+                        resolve({
+                            config: {},
+                            header: {},
+                            data: JSON.parse(xhr.responseText)
+                        });
+                        return;
+                    }
+                    reject(`${url} ${xhr.statusText}`)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
